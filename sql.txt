@@ -1,0 +1,151 @@
+中文输出
+$ git commit -a
+fatal: Unable to create 'C:/Users/Administrator/Desktop/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git format -patch v1..head
+git: 'format' is not a git command. See 'git --help'.
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git send-email *.patch
+fatal: your current branch 'master' does not have any commits yet
+format-patch -o /tmp/urnFektF7k *.patch: command returned error: 128
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git commit --amend
+fatal: You have nothing to amend.
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git rabase -i <commit-id>^
+bash: commit-id: No such file or directory
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git rm
+fatal: No pathspec was given. Which files should I remove?
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git rebase -i <commit -id>^
+bash: commit: No such file or directory
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git diff
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git diff --cached
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git svn clome <svn_repos_url>
+bash: syntax error near unexpected token `newline'
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git svn fetch Migrating from a git-svn v1 layout...
+Data from a previous version of git-svn exists, but
+        .git/svn
+        (required for this version (2.44.0.windows.1) of git-svn) does not exist.
+
+Done migrating from a git-svn v1 layout
+[svn-remote "svn"] unknown
+
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ cd git
+bash: cd: git: No such file or directory
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git fetch
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git tag
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git checkout
+fatal: You are on a branch yet to be born
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git status -s
+?? .jdks/
+?? .minecraft/
+?? FinalShell.lnk
+?? GitHub.lnk
+?? HMCL-3.5.5.exe
+?? "MySQL Command Line Client.lnk"
+?? "MySQL Workbench 8.0 CE.lnk"
+?? "Portal 2.url"
+?? Portal.url
+?? RDM.lnk
+?? "SQL Server Management Studio Management Studio 19.lnk"
+?? "Titanfall\302\256 2.url"
+?? "Visual Studio Code.lnk"
+?? "WPS Office.lnk"
+?? "What Remains of Edith Finch.url"
+?? desktop.ini
+?? geph.lnk
+?? gt.txt
+?? gw/
+?? hmcl.json
+?? mysql.txt
+?? navicat.lnk
+?? vue/
+?? vue_test/
+?? "~$\345\215\216\344\277\241\347\247\221\346\212\200\345\205\254\345\217\270\347\256\200\344\273\213\346\235\220\346\226\231\347\264\240\346\235\220.docx"
+?? "\344\270\211\345\233\275\346\235\200.lnk"
+?? "\345\233\276\344\271\246\347\256\241\347\220\206\347\263\273\347\273\237\347\244\272\344\276\213\345\233\276\347\211\207/"
+?? "\345\245\275\345\216\213\344\270\207\350\203\275\345\216\213\347\274\251.lnk"
+?? "\345\257\222\345\205\211\345\212\240\351\200\237\345\231\250.lnk"
+?? "\347\231\276\345\272\246\347\275\221\347\233\230.lnk"
+?? "\347\251\277\350\266\212\347\201\253\347\272\277.lnk"
+?? "\347\274\226\347\250\213\345\256\236\350\256\255\344\273\273\345\212\241.docx"
+?? "\350\205\276\350\256\257QQ.lnk"
+?? "\351\207\221\345\261\261\346\211\223\345\255\227\351\200\232.lnk"
+?? "\351\233\267\347\224\265\345\244\232\345\274\200\345\231\250.lnk"
+?? "\351\233\267\347\224\265\346\250\241\346\213\237\345\231\2504.lnk"
+?? "\351\243\216\344\272\221CAD\347\274\226\350\276\221\345\231\250.lnk"
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git config --global core.quotepath false
+
+Administrator@DESKTOP-1D2G3LJ MINGW64 ~/Desktop (master)
+$ git status -s
+?? .jdks/
+?? .minecraft/
+?? FinalShell.lnk
+?? GitHub.lnk
+?? HMCL-3.5.5.exe
+?? "MySQL Command Line Client.lnk"
+?? "MySQL Workbench 8.0 CE.lnk"
+?? "Portal 2.url"
+?? Portal.url
+?? RDM.lnk
+?? "SQL Server Management Studio Management Studio 19.lnk"
+?? "Titanfall® 2.url"
+?? "Visual Studio Code.lnk"
+?? "WPS Office.lnk"
+?? "What Remains of Edith Finch.url"
+?? desktop.ini
+?? geph.lnk
+?? gt.txt
+?? gw/
+?? hmcl.json
+?? mysql.txt
+?? navicat.lnk
+?? vue/
+?? vue_test/
+?? ~$华信科技公司简介材料素材.docx
+?? 三国杀.lnk
+?? 图书管理系统示例图片/
+?? 好压万能压缩.lnk
+?? 寒光加速器.lnk
+?? 百度网盘.lnk
+?? 穿越火线.lnk
+?? 编程实训任务.docx
+?? 腾讯QQ.lnk
+?? 金山打字通.lnk
+?? 雷电多开器.lnk
+?? 雷电模拟器4.lnk
+?? 风云CAD编辑器.lnk
