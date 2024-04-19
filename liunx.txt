@@ -1,0 +1,167 @@
+[dsg@localhost ~]$  cat /etc/shells
+/bin/sh
+/bin/bash
+/usr/bin/sh
+/usr/bin/bash
+/bin/tcsh
+/bin/csh
+[dsg@localhost ~]$ chmod 755 my_script
+chmod: 无法访问"my_script": 没有那个文件或目录
+[dsg@localhost ~]$ /bin
+-bash: /bin: 是一个目录
+[dsg@localhost ~]$ echo -n"Enter var:"; read var Enter var:123
+-nEnter var:
+echo var
+-bash: read: `var:123': 不是有效的标识符
+[dsg@localhost ~]$ var=123
+[dsg@localhost ~]$ Var=1
+[dsg@localhost ~]$ vAR=2
+[dsg@localhost ~]$ VAR3[dsg@localhost ~]$ var=123
+[dsg@localhost ~]$ Var=1
+[dsg@localhost ~]$ vAR=2
+[dsg@localhost ~]$ VAR3
+bash: VAR3: 未找到命令...
+[dsg@localhost ~]$ VAR=3
+[dsg@localhost ~]$ echo $VAR
+3
+[dsg@localhost ~]$ echo $vAR
+2
+34
+[dsg@localhost ~]$ ls
++400M    Documents  e        [Enter]-  Music  p-        Public     test    work.txt
+Desktop  Downloads  [Enter]  l         p      Pictures  Templates  Videos
+[dsg@localhost ~]$ ls -1
++400M
+Desktop
+Documents
+Downloads
+e
+[Enter]
+[Enter]-
+l
+Music
+p
+p-
+Pictures
+Public
+Templates
+test
+Videos
+work.txt
+[dsg@localhost ~]$ ls -1h
++400M
+Desktop
+Documents
+Downloads
+e
+[Enter]
+[Enter]-
+l
+Music
+p
+p-
+Pictures
+Public
+Templates
+test
+Videos
+work.txt
+[dsg@localhost ~]$ ls -F/lib
+ls：无效选项 -- /
+Try 'ls --help' for more information.
+[dsg@localhost ~]$ ls -ltr
+总用量 4
+drwxr-xr-x. 2 dsg dsg  6 10月 31 07:14 Videos
+drwxr-xr-x. 2 dsg dsg  6 10月 31 07:14 Templates
+drwxr-xr-x. 2 dsg dsg  6 10月 31 07:14 Public
+drwxr-xr-x. 2 dsg dsg  6 10月 31 07:14 Pictures
+drwxr-xr-x. 2 dsg dsg  6 10月 31 07:14 Music
+drwxr-xr-x. 2 dsg dsg  6 10月 31 07:14 Downloads
+drwxr-xr-x. 2 dsg dsg  6 10月 31 07:14 Documents
+drwxr-xr-x. 2 dsg dsg 24 10月 31 07:17 Desktop
+drwxrwxr-x. 3 dsg dsg 18 3月  11 08:49 test
+-rw-rw-r--. 1 dsg dsg 38 3月  14 08:54 work.txt
+-rw-rw-r--. 1 dsg dsg  0 3月  16 08:08 p-
+-rw-rw-r--. 1 dsg dsg  0 3月  16 08:08 [Enter]-
+-rw-rw-r--. 1 dsg dsg  0 3月  16 08:10 p
+-rw-rw-r--. 1 dsg dsg  0 3月  16 08:10 [Enter]
+-rw-rw-r--. 1 dsg dsg  0 3月  16 08:11 l
+-rw-rw-r--. 1 dsg dsg  0 3月  16 08:11 e
+-rw-rw-r--. 1 dsg dsg  0 3月  16 08:11 +400M
+[dsg@localhost ~]$ ls -a
+.              .bash_profile  Desktop    [Enter]-       .local    Pictures   .viminfo
+..             .bashrc        Documents  .esd_auth      .mozilla  Public     work.txt
++400M          .cache         Downloads  .hello.c.swp   Music     Templates
+.bash_history  .config        e          .ICEauthority  p         test
+.bash_logout   .dbus          [Enter]    l              p-        Videos
+[dsg@localhost ~]$ ls -A
++400M          .cache     Downloads  .hello.c.swp   Music     Templates
+.bash_history  .config    e          .ICEauthority  p         test
+.bash_logout   .dbus      [Enter]    l              p-        Videos
+.bash_profile  Desktop    [Enter]-   .local         Pictures  .viminfo
+.bashrc        Documents  .esd_auth  .mozilla       Public    work.txt
+[dsg@localhost ~]$ cat -n
+ad^H^H^H^H^H
+     1  ad
+
+     2  
+ext
+     3  ext
+[dsg@localhost ~]$ wc /etc/abrt
+wc: /etc/abrt: 是一个目录
+      0       0       0 /etc/abrt
+[dsg@localhost ~]$ wc -1 /etc/abrt
+wc：无效选项 -- 1
+Try 'wc --help' for more information.
+[dsg@localhost ~]$ find -iname example
+[dsg@localhost ~]$ find -type f -name "*.sh"
+[dsg@localhost ~]$ find -tyoe f -perm 0777
+find: 未知的断言“-tyoe”
+[dsg@localhost ~]$ find -type f -perm 0777
+[dsg@localhost ~]$ find -type f ! -perm 777
+./.bash_logout
+./.bash_profile
+./.bashrc
+./.cache/gdm/session.log.old
+./.cache/gdm/session.log
+./.cache/imsettings/log.bak
+./.cache/imsettings/log
+./.cache/gnome-shell/update-check-3.28
+./.cache/abrt/applet_dirlist
+[dsg@localhost ~]$ find -type f -perm/a+w
+find: 未知的断言“-perm/a+w”
+[dsg@localhost ~]$ find/tmp/-type f -name".*"
+-bash: find/tmp/-type: 没有那个文件或目录
+[dsg@localhost ~]$ find ~ -type f -mtime 3
+[dsg@localhost ~]$ find ~ -type f -size 50mb
+find: Invalid argument `50mb' to -size
+[dsg@localhost ~]$ touch effy1
+[dsg@localhost ~]$ touch sheffyl myeffyl lueffyl
+[dsg@localhost ~]$ touch -a effyl
+[dsg@localhost ~]$ touch -c effyl
+[dsg@localhost ~]$ touch -c -t YYMMDDHHMM filename
+touch: 日期格式"YYMMDDHHMM" 无效
+[dsg@localhost ~]$ touch -c -t 1111121030 effyl
+[dsg@localhost ~]$ touch -r myeffyl effyl
+[dsg@localhost ~]$ mkdir <dirname>
+-bash: 未预期的符号 `newline' 附近有语法错误
+[dsg@localhost ~]$ mkdir backup/old
+mkdir: 无法创建目录"backup/old": 没有那个文件或目录
+[dsg@localhost ~]$ mkdir etc/abrt
+mkdir: 无法创建目录"etc/abrt": 没有那个文件或目录
+[dsg@localhost ~]$ mkdir -p backup/old
+[dsg@localhost ~]$ mkdir -p backup
+[dsg@localhost ~]$ mkdir -p -m 777  backup
+[dsg@localhost ~]$ cp file.txt newfile.txt
+cp: 无法获取"file.txt" 的文件状态(stat): 没有那个文件或目录
+[dsg@localhost ~]$ cp 1.txt newfile.txt
+cp: 无法获取"1.txt" 的文件状态(stat): 没有那个文件或目录
+[dsg@localhost ~]$ ln -s/full/path/of/original/file/full/path/of/hard
+ln：无效选项 -- /
+Try 'ln --help' for more information.
+[dsg@localhost ~]$ mkdir /home/yantaol/src
+mkdir: 无法创建目录"/home/yantaol/src": 没有那个文件或目录
+[dsg@localhost ~]$ cd/tmp
+-bash: cd/tmp: 没有那个文件或目录
+[dsg@localhost ~]$ ln src-original.txt dst_link.txt
+ln: failed to access "src-original.txt": 没有那个文件或目录
