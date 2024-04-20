@@ -1,0 +1,110 @@
+[dsg@localhost ~]$ rm filel.txt file2.txt
+ [dsg@localhost ~]$ rm * bin
+[dsg@localhost ~]$ rm -i *
+rm：是否删除普通空文件 "+400M"？no
+rm: 无法删除"backup": 是一个目录
+rm: 无法删除"Desktop": 是一个目录
+rm: 无法删除"Documents": 是一个目录
+rm: 无法删除"Downloads": 是一个目录
+rm：是否删除普通空文件 "e"？
+[dsg@localhost ~]$ rm ??? rm*.??  rm*[abc]*
+[dsg@localhost ~]$ rm -rf /tmp/*
+[dsg@localhost ~]$ ls -1 /home
+dsg
+[dsg@localhost ~]$ chmod g-w /home
+chmod: 更改"/home" 的权限: 不允许的操作
+[dsg@localhost ~]$ chmod o+x /bin
+chmod: 更改"/bin" 的权限: 不允许的操作
+[dsg@localhost ~]$ chmod u=w /bin
+chmod: 更改"/bin" 的权限: 不允许的操作
+[dsg@localhost ~]$ chmod ugo+rwx /bin
+chmod: 更改"/bin" 的权限: 不允许的操作
+[dsg@localhost ~]$ chmod 777 /bin
+chmod: 更改"/bin" 的权限: 不允许的操作
+[dsg@localhost ~]$ chmod 664 /bin
+chmod: 更改"/bin" 的权限: 不允许的操作
+[dsg@localhost ~]$ chmod -R 775
+chmod: "775" 后缺少操作数
+Try 'chmod --help' for more information.
+[dsg@localhost ~]$ find .-type d -exec -R 775{}\;
+find: 遗漏“-exec”的参数
+[dsg@localhost ~]$ find .-type d -exec chmod -R 775{}\;
+find: 遗漏“-exec”的参数
+[dsg@localhost ~]$ ls -1 /home
+dsg
+[dsg@localhost ~]$ chown root /home
+chown: 正在更改"/home" 的所有者: 不允许的操作
+[dsg@localhost ~]$ us
+bash: us: 未找到命令...
+相似命令是：:
+'su'
+'uz'
+[dsg@localhost ~]$ chown :root /home
+chown: 正在更改"/home" 的所属组: 不允许的操作
+[dsg@localhost ~]$ chown yantaol:yantaol /home
+chown: 无效的用户: "yantaol:yantaol"
+[dsg@localhost ~]$ su
+密码：
+ABRT 已检测到 '2' 个问题。预了解详细信息请执行：abrt-cli list --since 1713442276
+[root@localhost dsg]# ls -1 tmpfile
+ls: 无法访问tmpfile: 没有那个文件或目录
+[root@localhost dsg]# ls -1 /home
+dsg
+[root@localhost dsg]# ls -1 /home -rw-r--r-- 1yantaol yantaol 0 Sep 11 11:33 tmpfile
+ls: 无效的行宽：-r--r--
+[root@localhost dsg]# chown -R -H yantaol:yantaol linux_symlnk
+chown: 无效的用户: "yantaol:yantaol"
+[root@localhost dsg]# chown -R -H dsg linux_symlnk
+chown: 无法访问"linux_symlnk": 没有那个文件或目录
+[root@localhost dsg]# chown -R -H dsg /bin
+ chmod u=s /bin
+[root@localhost dsg]# ls -1 /home
+dsg
+[root@localhost dsg]# chmod g+s /home
+[root@localhost dsg]# chmod 4755 /home
+
+[liuqiang@localhost ~]$ cat /bin
+cat: /bin: 是一个目录
+[liuqiang@localhost ~]$ sort /boot/dev
+sort: cannot read: /boot/dev: 没有那个文件或目录
+[liuqiang@localhost ~]$ sort /dev 
+sort: 读取失败: /dev: 是一个目录
+[liuqiang@localhost ~]$ sort -u /bin
+sort: 读取失败: /bin: 是一个目录
+[liuqiang@localhost ~]$ sort /bin /home
+sort: 读取失败: /bin: 是一个目录
+[liuqiang@localhost ~]$ cat /sys/class/ata_link/link1/sata_spd
+<unknown>
+[liuqiang@localhost ~]$ uniq /sys/class/ata_link/link1/sata_spd
+<unknown>
+[liuqiang@localhost ~]$ uniq -c /sys/class/ata_link/link1/sata_spd
+      1 <unknown>
+[liuqiang@localhost ~]$ uniq -u /sys/class/ata_link/link1/sata_spd
+<unknown>
+[liuqiang@localhost ~]$ uniq -w 3 /sys/class/ata_link/link1/sata_spd
+<unknown>
+[liuqiang@localhost ~]$ echo linuxShell | tr [:lower:] [:upper:]
+LINUXSHELL
+[liuqiang@localhost ~]$ cat inputfile
+cat: inputfile: 没有那个文件或目录
+[liuqiang@localhost ~]$ cat /sys/class/ata_link/link1/sata_spd
+<unknown>
+[liuqiang@localhost ~]$ tr '{}' '()' <sata_sqd> uevent
+-bash: sata_sqd: 没有那个文件或目录
+[liuqiang@localhost ~]$ cat uevent
+cat: uevent: 没有那个文件或目录
+[liuqiang@localhost ~]$ cat /sys/class/ata_link/link1/sata_spd
+<unknown>
+
+cat: /sys/sata_spd: 没有那个文件或目录
+[liuqiang@localhost ~]$ echo "This is for testing" | tr [:space] '\t'
+Thi      i       for t          ting
+[liuqiang@localhost ~]$ echo "you is big" | tr -s[:space:] '\t'
+tr：无效选项 -- [
+Try 'tr --help' for more information.
+[liuqiang@localhost ~]$ echo "you is     big" | tr -s [:space:] '\t'
+you     is      big     [liuqiang@localhost ~]$ 
+[liuqiang@localhost ~]$ echo  "The Liunx Shell " | tr -d a-z
+T L S 
+[liuqiang@localhost ~]$ echp "my username is yantao1123" |tr -cd [:digit:]
+bash: echp: 未找到命令...
