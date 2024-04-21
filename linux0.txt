@@ -1,0 +1,244 @@
+[liuqiang@localhost ~]$ grep -r yantaol/bin/
+[liuqiang@localhost ~]$ grep -rl yantaol /bin
+grep: /bin/chfn: Permission denied
+grep: /bin/chsh: Permission denied
+grep: /bin/ssh-agent: Permission denied
+grep: /bin/sudo: Permission denied
+grep: /bin/locate: Permission denied
+grep: /bin/staprun: Permission denied
+grep: /bin/sudoreplay: Permission denied
+[liuqiang@localhost ~]$ grep -c yantaol /etc
+grep: /etc: Is a directory
+0
+[liuqiang@localhost ~]$ cat /bin |grep -i Yantaol
+cat: /bin: Is a directory
+[liuqiang@localhost ~]$ cat -n /jom
+cat: /jom: No such file or directory
+[liuqiang@localhost ~]$ cat -n /home
+cat: /home: Is a directory
+[liuqiang@localhost ~]$ diff /bin /home
+Only in /bin: [
+Only in /bin: a2p
+Only in /bin: abrt-action-analyze-backtrace
+Only in /bin: abrt-action-analyze-c
+Only in /bin: abrt-action-analyze-ccpp-local
+[liuqiang@localhost ~]$ diff -yw /bin /home
+Only in /bin: [
+st ~]$ w
+ 19:38:45 up 20 min,  2 users,  load average: 0.06, 0.04, 0.06
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+liuqiang :0       :0               19:18   ?xdm?  26.12s  0.11s /usr/libexec/gnome-ses
+liuqiang pts/0    :0               19:22    5.00s  0.04s  0.01s w
+[liuqiang@localhost ~]$ who
+liuqiang :0           2024-04-20 19:18 (:0)
+liuqiang pts/0        2024-04-20 19:22 (:0)
+[liuqiang@localhost ~]$ who -b
+         system boot  2024-04-20 19:17
+[liuqiang@localhost ~]$ who -1
+who: invalid option -- '1'
+Try 'who --help' for more information.
+[liuqiang@localhost ~]$ who -m
+liuqiang pts/0        2024-04-20 19:22 (:0)
+[liuqiang@localhost ~]$ who -p
+[liuqiang@localhost ~]$ who -q
+liuqiang liuqiang
+# users=2
+[liuqiang@localhost ~]$ uptime
+ 19:40:21 up 22 min,  2 users,  load average: 0.01, 0.03, 0.05
+[liuqiang@localhost ~]$ uname
+Linux
+[liuqiang@localhost ~]$ uname -n
+localhost.localdomain
+[liuqiang@localhost ~]$ uname -m
+x86_64
+[liuqiang@localhost ~]$ uname -p
+x86_64
+[liuqiang@localhost ~]$ date --date="10/1/2022"
+Sat Oct  1 00:00:00 PDT 2022
+[liuqiang@localhost ~]$ date --date="next week"
+Sat Apr 27 19:42:50 PDT 2024
+[liuqiang@localhost ~]$ cat datefile
+cat: datefile: No such file or directory
+[liuqiang@localhost ~]$ date -s "Thu Sep 21 11:11:00 CST2024"
+date: cannot set date: Operation not permitted
+Sat Sep 21 10:11:00 PDT 2024
+[liuqiang@localhost ~]$ stat datefile
+stat: cannot stat ‘datefile’: No such file or directory
+[liuqiang@localhost ~]$ id -un
+liuqiang
+[liuqiang@localhost ~]$ id -G root
+0
+[liuqiang@localhost ~]$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+
+liuqiang@localhost ~]$ gzip -d /bin
+gzip: /bin: Too many levels of symbolic links
+[liuqiang@localhost ~]$ bzip2 -df /home
+bzip2: Input file /home is a directory.
+[liuqiang@localhost ~]$ tar -cvf home-vv /home
+tar: Removing leading `/' from member names
+/home/
+/home/liuqiang/
+/home/liuqiang/.mozilla/
+/home/liuqiang/.mozilla/extensions/
+/home/liuqiang/.mozilla/plugins/
+
+ar: /home/liuqiang/home-vv: file is the archive; not dumped
+[liuqiang@localhost ~]$ tar-czvf home-cvv /jome
+bash: tar-czvf: command not found...
+[liuqiang@localhost ~]$ tar -xzvf home_h.tar.gz /home
+tar (child): home_h.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+[liuqiang@localhost ~]$ tar -tvf home_h.tar
+tar: home_h.tar: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+[liuqiang@localhost ~]$ tar --dvf home-vv.tar
+tar: unrecognized option '--dvf'
+Try `tar --help' or `tar --usage' for more information.
+[liuqiang@localhost ~]$ mount -t /bin
+[liuqiang@localhost ~]$ mount -t iso9660 -o ro /bin
+mount: only root can use "--options" option
+[liuqiang@localhost ~]$ mount -t iso9660 -o loop RHEL6.iso /bin
+mount: only root can use "--options" option
+[liuqiang@localhost ~]$ cat /home
+cat: /home: Is a directory
+[liuqiang@localhost ~]$ mount -t ext3 /home
+mount: only root can use "--types" option
+[liuqiang@localhost ~]$ umount /opt/share
+umount: /opt/share: No such file or directory
+[liuqiang@localhost ~]$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+devtmpfs          482100       0    482100   0% /dev
+tmpfs             497836       0    497836   0% /dev/shm
+tmpfs             497836    8660    489176   2% /run
+tmpfs             497836       0    497836   0% /sys/fs/cgroup
+/dev/sda3       18555904 5380612  13175292  29% /
+/dev/sda1         303780  155540    148240  52% /boot
+tmpfs              99568      28     99540   1% /run/user/1000
+[liuqiang@localhost ~]$ df -x ext3
+Filesystem     1K-blocks    Used Available Use% Mounted on
+devtmpfs          482100       0    482100   0% /dev
+tmpfs             497836       0    497836   0% /dev/shm
+tmpfs             497836    8660    489176   2% /run
+tmpfs             497836       0    497836   0% /sys/fs/cgroup
+/dev/sda3       18555904 5380592  13175312  29% /
+/dev/sda1         303780  155540    148240  52% /boot
+tmpfs              99568      28     99540   1% /run/user/1000
+[liuqiang@localhost ~]$ du
+0	./.mozilla/extensions
+0	./.mozilla/plugins
+0	./.mozilla
+0	./.cache/gdm
+[liuqiang@localhost ~]$ du -sh
+13M	.
+[liuqiang@localhost ~]$ du -h -0
+0	./.mozilla/extensions0	./.mozilla/plugins0	./.mozilla0	./.cache/gdm8.0K	./.cache/imsettings0	./.cache/libgweather0	./.cache/evolution/addressbook/trash0	./.cache/evolution/addressbook0	./.cache/evolution/calendar/trash0	./.c
+
+$ crontab -1
+crontab: invalid option -- '1'
+crontab: usage error: unrecognized option
+Usage:
+ crontab [options] file
+ crontab [options]
+ crontab -n [hostname]
+
+Options:
+ -u <user>  define user
+ -e         edit user's crontab
+ -l         list user's crontab
+ -r         delete user's crontab
+ -i         prompt before deleting
+ -n <host>  set host in cluster to run users' crontabs
+ -c         get host in cluster to run users' crontabs
+ -s         selinux context
+ -x <mask>  enable debugging
+
+Default operation is replace, per 1003.2
+[liuqiang@localhost ~]$ date
+Sat Apr 20 20:02:10 PDT 2024
+[liuqiang@localhost ~]$ at 5am
+at> /home -f
+at> <EOT> 
+at> 
+[liuqiang@localhost ~]$ atq
+1	Sun Apr 21 05:00:00 2024 a liuqiang
+[liuqiang@localhost ~]$ command &
+[1] 3771
+[1]+  Done                    command
+[liuqiang@localhost ~]$ sleep 10 &
+[1] 3778
+[liuqiang@localhost ~]$ jobs
+[1]+  Done                    sleep 10
+[liuqiang@localhost ~]$ sleep 30&
+[1] 3799
+[liuqiang@localhost ~]$ bg
+bash: bg: job 1 already in background
+[liuqiang@localhost ~]$ nohup sh script.sh&
+[2] 3820
+nohup: ignoring input and appending output to ‘nohup.out’
+[1]   Done                    sleep 30
+[2]+  Exit 127                nohup sh script.sh
+[liuqiang@localhost ~]$ ps -ef | grep 12496
+liuqiang   3836   3712  0 20:06 pts/0    00:00:00 grep --color=auto 12496
+
+liuqiang@localhost ~]$ cat seeDate_IP_Hostname.sh
+cat: seeDate_IP_Hostname.sh: No such file or directory
+[liuqiang@localhost ~]$ cd /home
+[liuqiang@localhost home]$ PARAMETER
+bash: PARAMETER: command not found...
+[liuqiang@localhost home]$ WORD=car
+[liuqiang@localhost home]$ echo $WORDs
+
+[liuqiang@localhost home]$ echo "Argument 1 is:$1 "
+Argument 1 is: 
+[liuqiang@localhost home]$ PARAMETER=
+[liuqiang@localhost home]$ TEMP="It's indirect "
+[liuqiang@localhost home]$ echo $PARAMETER
+
+[liuqiang@localhost home]$ echo ${!BASH*}
+BASH BASHOPTS BASHPID BASH_ALIASES BASH_ARGC BASH_ARGV BASH_CMDS BASH_COMMAND BASH_COMPLETION_COMPAT_DIR BASH_LINENO BASH_SOURCE BASH_SUBSHELL BASH_VERSINFO BASH_VERSION
+[liuqiang@localhost home]$ MYSTRING="This is used for removing string"
+[liuqiang@localhost home]$ echo ${MYSTRING#*}
+This is used for removing string
+[liuqiang@localhost home]$ ECHO ${FILENAEM%/*} /bin
+bash: ECHO: command not found...
+Similar command is: 'echo'
+[liuqiang@localhost home]$ echo ${MYSTRING/STRING/CHARACTERS}
+This is used for removing string
+[liuqiang@localhost home]$ {#PARAMETER }
+bash: {#PARAMETER: command not found...
+[liuqiang@localhost home]$ echo ${MYSTRING:8:10}
+used for r
+[liuqiang@localhost home]$ unset MYSTRING
+[liuqiang@localhost home]$ echo $MYstring
+
+[liuqiang@localhost home]$ echo ${MYSTRING:-Hello World}
+Hello World
+[liuqiang@localhost home]$ echo $MYSTRING
+
+[liuqiang@localhost home]$ MYSTRING=""
+[liuqiang@localhost home]$ echo $BASH
+/usr/bin/bash
+[liuqiang@localhost home]$ set x y z
+[liuqiang@localhost home]$ echo $OSTYPE
+linux-gnu
+[liuqiang@localhost home]$ set one two three
+[liuqiang@localhost home]$ touch newfile
+touch: cannot touch ‘newfile’: Permission denied
+[liuqiang@localhost home]$ echo $?
+1
+[liuqiang@localhost home]$ rm -f newfile
+[liuqiang@localhost home]$ ls newfile
+ls: cannot access newfile: No such file or directory
+[liuqiang@localhost home]$ sleep 10 &
+[1] 5378
+[liuqiang@localhost home]$ echo $0
+bash
+[1]+  Done                    sleep 10
+[liuqiang@localhost home]$ bash ./param_zero.sh
+bash: ./param_zero.sh: No such file or directory
+[liuqiang@localhost home]$ cat param_underscore.sh
+cat: param_underscore.sh: No such file or directory
+[liuqiang@localhost home]$ 
