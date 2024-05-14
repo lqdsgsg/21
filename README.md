@@ -6,7 +6,7 @@
 菜鸟学习虚拟机shell入门到进阶记录的一些代码。
 
 ### 下载
-git clone ***
+git  clone  https://github.com/lqdsgsg/git.git
 复制到vim编辑器直接运行
 
 
